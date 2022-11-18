@@ -1,5 +1,7 @@
 package com.cursoandroid.atmconsultoria;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -49,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+    }
+
+    public void enviarEmail(){
+        Intent intent = new Intent( Intent.ACTION_DIAL, Uri.parse("tel:014997568439") );
+        startActivity( intent );
     }
 
     @Override
