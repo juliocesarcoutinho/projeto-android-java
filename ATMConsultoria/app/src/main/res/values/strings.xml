@@ -12,6 +12,17 @@
     <string name="menu_servicos">Serviços</string>
     <string name="menu_contatos">Contato</string>
     <string name="menu_sobre">Sobre</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Serviços -->
+
+    <!-- Clientes -->
+    <string name="textTelaCliente">Clientes</string>
+    <string name="textCliente1">Em mais de 20 anos nós da ATM consultoria temos acumulado muitos clientes ao longo dos anos, com uma equipe que trabalha constantemente pra que nossos clientes tenham sempre os melhores resultados, nós contamos com diversos clientes que confiam em nós</string>
+
+    <!-- Contato -->
+    <string name="textTelaContato">Tela de Contato</string>
+    <string name="textContato1"></string>
+
+    <!-- Sobre -->
+    <string name="textTelaSobre">Tela Sobre</string>
 </resources>
