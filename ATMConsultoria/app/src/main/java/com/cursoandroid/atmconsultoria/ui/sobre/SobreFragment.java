@@ -10,6 +10,9 @@ import android.view.ViewGroup;
 
 import com.cursoandroid.atmconsultoria.R;
 
+import mehdi.sakout.aboutpage.AboutPage;
+import mehdi.sakout.aboutpage.Element;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link SobreFragment#newInstance} factory method to
@@ -60,7 +63,30 @@ public class SobreFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        String descricao = "ATM Consultoria, tem como missão oferercer os melhores serviços " +
+                "para que as empresas possam estar cada vez mais crescendo no desempenho de nova " +
+                "missões e não sei mais o que dizer";
+
+        Element element = new Element();
+        element.setTitle( "Versão 1.0" );
+
+        return  new AboutPage( getActivity() )
+                .isRTL(false)
+                .setDescription(descricao) // or Typeface
+                .setImage(R.drawable.logo)
+                .addGroup("Entre em contato")
+                .addEmail("atendimento@atmconsultoria", "Envie um email")
+                .addWebsite("https://atmcconsultoria.com.br/", "Visite nosso site")
+                // Redes Sociais
+                .addGroup("Redes Sociais")
+                .addFacebook("juliocesarcoutinho37", "Facebook")
+                .addInstagram("juliocesarcoutinho37", "Instagram")
+                .addItem(element)
+
+                .create();
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sobre, container, false);
+        //return inflater.inflate(R.layout.fragment_sobre, container, false);
     }
 }
