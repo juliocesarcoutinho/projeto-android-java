@@ -68,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
+    public void enviarEmail(){
+        Intent intent = new Intent( Intent.ACTION_DIAL, Uri.parse("tel:014997568439") );
+        startActivity( intent );
+    }
+
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
