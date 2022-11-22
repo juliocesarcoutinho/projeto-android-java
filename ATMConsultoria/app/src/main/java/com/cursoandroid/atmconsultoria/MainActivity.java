@@ -1,5 +1,7 @@
 package com.cursoandroid.atmconsultoria;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -16,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.cursoandroid.atmconsultoria.databinding.ActivityMainBinding;
 
+import java.net.URI;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -29,11 +33,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
+
+        // Onclic do botão compartilhar
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                /*Intent intent = new Intent( Intent.ACTION_DIAL, Uri.parse( "tel:014997568439" ));*/
+
+                Intent intent = new Intent( Intent.ACTION_SEND);
+                intent.putExtra( Intent.EXTRA_EMAIL, new String[]{ "antendimento@atmconsultoria.com.br" } );
+                intent.putExtra( Intent.EXTRA_SUBJECT, "Contato pelo App" );
+                intent.putExtra( Intent.EXTRA_TEXT, "Mensagem automatica" );
+
+               /*intent.setType( "message/rfc822" );*/
+               intent.setType( "text/plain" );
+
+               startActivity( Intent.createChooser( intent, "Compartilhar" ) );
+
+
             }
         });
         DrawerLayout drawer = binding.drawerLayout;
