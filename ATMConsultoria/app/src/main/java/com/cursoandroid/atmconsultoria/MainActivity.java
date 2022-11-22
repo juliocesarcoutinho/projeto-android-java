@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra( Intent.EXTRA_SUBJECT, "Contato pelo App" );
                 intent.putExtra( Intent.EXTRA_TEXT, "Mensagem automatica" );
 
-               /*intent.setType( "message/rfc822" );*/
-               intent.setType( "text/plain" );
+               intent.setType( "message/rfc822" );
+               //intent.setType( "text/plain" );
 
                startActivity( Intent.createChooser( intent, "Compartilhar" ) );
 
